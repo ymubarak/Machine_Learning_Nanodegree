@@ -23,7 +23,7 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         # Set any additional class parameters as needed
-        self.trial = 1
+        self.trial = 0 # trial number
 
 
     def reset(self, destination=None, testing=False):
@@ -38,9 +38,9 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         # Update epsilon using a decay function of your choice
-        # self.epsilon = self.epsilon - 0.05
-        # epsilon = e^(-at)
-        self.epsilon = math.exp(-1 * self.alpha * self.trial)
+        # Epsilon Decay function: epsilon= e^(-at), a = 0.0005
+        # 'a' is chosen to be a low value to slow down the decay rate
+        self.epsilon = math.exp(-1 * 0.0005 * self.trial)
         # Update additional class parameters as needed
         self.trial += 1
         # If 'testing' is True, set epsilon and alpha to 0
@@ -138,10 +138,6 @@ class LearningAgent(Agent):
         return action
 
 
-    def value_iteration(self, v, w):
-    	return (1 - self.alpha) * v + self.alpha * w
-
-
     def learn(self, state, action, reward):
         """ The learn function is called after the agent completes an action and
             receives a reward. This function does not consider future rewards 
@@ -153,7 +149,7 @@ class LearningAgent(Agent):
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
         if self.learning:
-        	self.Q[state][action] = self.value_iteration(self.Q[state][action], reward)
+        	self.Q[state][action] = (1 - self.alpha) * self.Q[state][action] + self.alpha * reward
 
 
         return
@@ -191,7 +187,7 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    agent = env.create_agent(LearningAgent, learning=True, epsilon=0.5, alpha=0.0005)
+    agent = env.create_agent(LearningAgent, learning=True, epsilon=0.5, alpha=0.1)
     
     ##############
     # Follow the driving agent
