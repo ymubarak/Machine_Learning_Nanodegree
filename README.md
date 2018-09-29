@@ -16,7 +16,7 @@ These are project for Udacity's Machine Learning Specialization Nanodegree progr
 
 ![histogram](https://github.com/youssef-ahmed/Machine_Learning_Nanodegree/blob/master/snapshots/fgdonors.png)
 
-## Unupervised Learnig
+## Unsupervised Learnig
 - **customer_segments**:
   - Analyzing a dataset containing data on various customers' annual spending amounts of diverse product categories.
   - Describing the variations in the different types of customers that a wholesale distributor interacts with.
