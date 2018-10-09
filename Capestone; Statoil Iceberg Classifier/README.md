@@ -1,4 +1,4 @@
-# San Fransisco Crime Classification Problem
+# Statoil: Icberge Classification Problem
 ## Capstone Project
 
 ## Problem Statement:
