@@ -50,6 +50,15 @@ These are project for Udacity's Machine Learning Specialization Nanodegree progr
 ![dogs](https://github.com/youssef-ahmed/Machine_Learning_Nanodegree/blob/master/snapshots/dog_breed.PNG) 
 
 ## Capestone Project
-**...**:  
-....
+## Statoil: Icberge Classification Problem:  
+
+### Problem Statement:
+Drifting icebergs present threats to navigation and activities in areas such as offshore of the East Coast of Canada. Currently, many institutions and companies use aerial reconnaissance and shore-based support to monitor environmental conditions and assess risks from icebergs. However, in remote areas with particularly harsh weather, these methods are not feasible, and the only viable monitoring option is via satellite.  
+
+The challenged is to build an algorithm that automatically identifies if a remotely sensed target is a ship or iceberg from satellite imagery. Improvements made will help drive the costs down for maintaining safe working conditions.
+
+### Results:
+
+Accuracy: 92%.
+Kaggle Leaderboard score: 0.267.
 
